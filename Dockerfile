@@ -73,15 +73,17 @@ RUN apt-get update -y && \
 
 COPY ./root /
 
-# Set permissions
+# Fix permissions
 RUN chown -Rf www-data:www-data /etc/php/7.3 && \
-    chown -Rf www-data:www-data /var/www/app
+    chown -Rf www-data:www-data /var/www/app && \
+    chmod +x /docker-entrypoint.sh
 
-# Set workdir to app
+VOLUME ["/run/php", "/var/lib/php"]
+
 WORKDIR /var/www/app
 
 EXPOSE 80 443
 
-VOLUME ["/run/php", "/var/lib/php"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
 
 CMD ["/usr/bin/supervisord"]
