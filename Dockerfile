@@ -6,6 +6,7 @@ ENV LOCALE="en_US.UTF-8" \
     LANG=${LOCALE} \
     LANGUAGE=${LOCALE} \
     LC_ALL=${LOCALE} \
+    TERM="xterm" \
     BUILD_DEPS="software-properties-common"
 
 RUN apt-get update -y && \
