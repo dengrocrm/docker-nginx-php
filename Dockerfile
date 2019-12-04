@@ -18,7 +18,7 @@ RUN apt-get update -y && \
         composer \
         cron \
         nginx \
-        node \
+        nodejs \
         npm \
         php7.3 \
         php7.3-bcmath \
