@@ -56,6 +56,8 @@ RUN apt-get update -y && \
         tzdata \
         yarnpkg \
         wget && \
+    # Update NPM
+    npm install npm@latest -g && \
     # Remove default Nginx directories
     rm -rf /etc/nginx/sites-enabled/* /etc/nginx/sites-available/ && \
     # Create Supervisor log directory
