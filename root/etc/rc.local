@@ -1,0 +1,5 @@
+# Fix for https://github.com/docker-library/redis/issues/35
+sysctl -w net.core.somaxconn=65535
+
+# Disable Transparent Huge Pages (THP)
+echo never > /sys/kernel/mm/transparent_hugepage/enabled
