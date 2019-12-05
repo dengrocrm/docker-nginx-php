@@ -79,4 +79,4 @@ WORKDIR /var/www/app
 
 EXPOSE 80 443
 
-CMD ["/usr/bin/supervisord"]
+CMD ["/usr/bin/supervisord", "-nc", "/etc/supervisor/supervisord.conf"]
