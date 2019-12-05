@@ -66,24 +66,17 @@ RUN apt-get update -y && \
     # Clean-up
     apt-get purge -y --auto-remove $BUILD_DEPS && \
     apt-get autoremove -y && apt-get clean && \
-    rm -rf /var/lib/apt/lists/* && \
-    # Forward access and error logs to stdout and stderr
-    ln -sf /dev/stdout /var/log/nginx/access.log && \
-    ln -sf /dev/stderr /var/log/nginx/error.log
+    rm -rf /var/lib/apt/lists/*
 
 COPY ./root /
 
 # Fix permissions
-RUN chown -Rf www-data:www-data /etc/php/7.3 && \
-    chown -Rf www-data:www-data /var/www/app && \
-    chmod +x /docker-entrypoint.sh
+RUN chown -Rf www-data:www-data /var/www/app /var/log/nginx /var/lib/nginx 
 
 VOLUME ["/run/php", "/var/lib/php"]
 
 WORKDIR /var/www/app
 
 EXPOSE 80 443
-
-ENTRYPOINT ["/docker-entrypoint.sh"]
 
 CMD ["/usr/bin/supervisord"]
