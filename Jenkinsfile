@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage("Docker Build") {
             steps {
-                sh "docker build -t nginx-php:latest ."
+                sh "docker build -t 448781339860.dkr.ecr.eu-west-1.amazonaws.com/nginx-php:latest ."
             }
         }
         stage("ECR Login") {
