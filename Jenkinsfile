@@ -11,7 +11,7 @@ pipeline {
         }
         stage("ECR Login") {
             steps {
-                withAWS(credentials:'aws-credential') {
+                withAWS(credentials:'awsCredentials') {
                     script {
                         def login = ecrLogin()
                         sh "${login}"
@@ -23,12 +23,6 @@ pipeline {
             steps {
                 sh "docker push ${registry}"
             }
-        }
-    }
-    post {
-        success {
-            echo 'ending'
-            build job: 'TestJob-CD'
         }
     }
 }
