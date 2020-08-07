@@ -56,6 +56,7 @@ RUN apt-get update -y && \
         supervisor \
         tzdata \
         yarnpkg \
+        zip \
         wget && \
     # Update NPM
     npm install npm@latest -g && \
