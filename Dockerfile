@@ -16,6 +16,7 @@ RUN apt-get update -y && \
     # Install libraries
     apt-get install --no-install-recommends -y \
         $BUILD_DEPS \
+        build-essential \
         composer \
         cron \
         curl \
