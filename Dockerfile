@@ -18,6 +18,7 @@ RUN apt-get update -y && \
         $BUILD_DEPS \
         composer \
         cron \
+        curl \
         nginx \
         nodejs \
         npm \
@@ -53,6 +54,7 @@ RUN apt-get update -y && \
         # php7.4-xdebug \
         php7.4-zip \
         # php7.4-zlib \
+        ssh \
         supervisor \
         tzdata \
         yarnpkg \
