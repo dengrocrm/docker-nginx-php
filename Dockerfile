@@ -76,7 +76,7 @@ RUN apt-get update -y && \
 COPY ./root /
 
 # Fix permissions
-RUN chown -Rf www-data:www-data /var/www/app /var/log/nginx /var/lib/nginx 
+RUN chown -Rf www-data:www-data /var/www/app /var/log/nginx /var/lib/nginx /var/lib/php/sessions
 
 VOLUME ["/run/php", "/var/lib/php"]
 
