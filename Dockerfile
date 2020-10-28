@@ -17,7 +17,6 @@ RUN apt-get update -y && \
     apt-get install --no-install-recommends -y \
         $BUILD_DEPS \
         build-essential \
-        composer \
         cron \
         curl \
         nginx \
@@ -62,6 +61,8 @@ RUN apt-get update -y && \
         zip \
         unzip \
         wget && \
+    # Install composer
+    RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
     # Update NPM
     npm install npm@latest -g && \
     # Remove default Nginx directories
