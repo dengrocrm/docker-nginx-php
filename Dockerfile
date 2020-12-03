@@ -19,6 +19,7 @@ RUN apt-get update -y && \
         build-essential \
         cron \
         curl \
+        libpng-dev \
         nginx \
         nodejs \
         npm \
