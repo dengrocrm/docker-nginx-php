@@ -10,51 +10,53 @@ ENV LOCALE="en_US.UTF-8" \
     BUILD_DEPS="software-properties-common"
 
 RUN apt-get update -y && \
+    apt-get install --no-install-recommends -y \
+        $BUILD_DEPS \
+        build-essential && \
+    add-apt-repository -y ppa:ondrej/php
+
+RUN apt-get update -y && \
     apt-get install --no-install-recommends -y locales && \
     locale-gen ${LOCALE} && \
     dpkg-reconfigure locales && \
-    # Install libraries
     apt-get install --no-install-recommends -y \
-        $BUILD_DEPS \
-        build-essential \
         cron \
         curl \
         libpng-dev \
         nginx \
         nodejs \
         npm \
-        php7.4 \
-        php7.4-bcmath \
-        php7.4-cli \
-        php7.4-common \
-        php7.4-curl \
-        # php7.4-ctype \
-        php7.4-dev \
-        # php7.4-dom \
-        # php7.4-fileinfo \
-        php7.4-fpm \
-        php7.4-gd \
-        # php7.4-iconv \
-        php7.4-intl \
-        php7.4-json \
-        php7.4-mbstring \
-        # php7.4-mcrypt \
-        php7.4-opcache \
-        # php7.4-openssl \
-        # php7.4-pdo \
-        php7.4-mysql \
-        php7.4-pgsql \
-        # php7.4-session \
-        # php7.4-simplexml \
-        php7.4-soap \
-        php7.4-sqlite3 \
-        # php7.4-tokenizer \
-        php7.4-xml \
-        # php7.4-xmlreader \
-        # php7.4-xmlwriter \
-        # php7.4-xdebug \
-        php7.4-zip \
-        # php7.4-zlib \
+        php8.0 \
+        php8.0-bcmath \
+        php8.0-cli \
+        php8.0-common \
+        php8.0-curl \
+        # php8.0-ctype \
+        php8.0-dev \
+        # php8.0-dom \
+        # php8.0-fileinfo \
+        php8.0-fpm \
+        php8.0-gd \
+        # php8.0-iconv \
+        php8.0-intl \
+        php8.0-mbstring \
+        # php8.0-mcrypt \
+        php8.0-opcache \
+        # php8.0-openssl \
+        # php8.0-pdo \
+        php8.0-mysql \
+        php8.0-pgsql \
+        # php8.0-session \
+        # php8.0-simplexml \
+        php8.0-soap \
+        php8.0-sqlite3 \
+        # php8.0-tokenizer \
+        php8.0-xml \
+        # php8.0-xmlreader \
+        # php8.0-xmlwriter \
+        # php8.0-xdebug \
+        php8.0-zip \
+        # php8.0-zlib \
         ssh \
         supervisor \
         tzdata \
