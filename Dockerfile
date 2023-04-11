@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.10
 LABEL maintainer="dengrocrm"
 
 ENV LOCALE="en_US.UTF-8" \
@@ -12,8 +12,7 @@ ENV LOCALE="en_US.UTF-8" \
 RUN apt-get update -y && \
     apt-get install --no-install-recommends -y \
         $BUILD_DEPS \
-        build-essential && \
-    add-apt-repository -y ppa:ondrej/php
+        build-essential
 
 RUN apt-get update -y && \
     apt-get install --no-install-recommends -y locales && \
@@ -26,37 +25,37 @@ RUN apt-get update -y && \
         nginx \
         nodejs \
         npm \
-        php8.0 \
-        php8.0-bcmath \
-        php8.0-cli \
-        php8.0-common \
-        php8.0-curl \
-        # php8.0-ctype \
-        php8.0-dev \
-        # php8.0-dom \
-        # php8.0-fileinfo \
-        php8.0-fpm \
-        php8.0-gd \
-        # php8.0-iconv \
-        php8.0-intl \
-        php8.0-mbstring \
-        # php8.0-mcrypt \
-        php8.0-opcache \
-        # php8.0-openssl \
-        # php8.0-pdo \
-        php8.0-mysql \
-        php8.0-pgsql \
-        # php8.0-session \
-        # php8.0-simplexml \
-        php8.0-soap \
-        php8.0-sqlite3 \
-        # php8.0-tokenizer \
-        php8.0-xml \
-        # php8.0-xmlreader \
-        # php8.0-xmlwriter \
-        # php8.0-xdebug \
-        php8.0-zip \
-        # php8.0-zlib \
+        php8.1 \
+        php8.1-bcmath \
+        php8.1-cli \
+        php8.1-common \
+        php8.1-curl \
+        # php8.1-ctype \
+        php8.1-dev \
+        # php8.1-dom \
+        # php8.1-fileinfo \
+        php8.1-fpm \
+        php8.1-gd \
+        # php8.1-iconv \
+        php8.1-intl \
+        php8.1-mbstring \
+        # php8.1-mcrypt \
+        php8.1-opcache \
+        # php8.1-openssl \
+        # php8.1-pdo \
+        php8.1-mysql \
+        php8.1-pgsql \
+        # php8.1-session \
+        # php8.1-simplexml \
+        php8.1-soap \
+        php8.1-sqlite3 \
+        # php8.1-tokenizer \
+        php8.1-xml \
+        # php8.1-xmlreader \
+        # php8.1-xmlwriter \
+        # php8.1-xdebug \
+        php8.1-zip \
+        # php8.1-zlib \
         ssh \
         supervisor \
         tzdata \
