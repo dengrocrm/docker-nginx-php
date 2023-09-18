@@ -1,4 +1,4 @@
-FROM ubuntu:22.10
+FROM ubuntu:23.04
 LABEL maintainer="dengrocrm"
 
 ENV LOCALE="en_US.UTF-8" \
@@ -65,8 +65,6 @@ RUN apt-get update -y && \
         wget && \
     # Install composer
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
-    # Update NPM
-    npm install npm@latest -g && \
     # Remove default Nginx directories
     rm -rf /etc/nginx/sites-enabled/* /etc/nginx/sites-available/ && \
     # Create Supervisor log directory
