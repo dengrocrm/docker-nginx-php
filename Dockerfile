@@ -1,6 +1,10 @@
 FROM ubuntu:23.04
 LABEL maintainer="dengrocrm"
 
+# Deleting the ubuntu user as it's not required and is known to conflict with host system user/group IDs
+RUN userdel -f ubuntu && \
+  if getent group ubuntu ; then groupdel ubuntu; fi
+
 ENV LOCALE="en_US.UTF-8" \
     DEBIAN_FRONTEND=noninteractive \
     LANG=${LOCALE} \
