@@ -1,4 +1,4 @@
-FROM ubuntu:23.04
+FROM ubuntu:23.10
 LABEL maintainer="dengrocrm"
 
 # Deleting the ubuntu user as it's not required and is known to conflict with host system user/group IDs
@@ -29,37 +29,37 @@ RUN apt-get update -y && \
         nginx \
         nodejs \
         npm \
-        php8.1 \
-        php8.1-bcmath \
-        php8.1-cli \
-        php8.1-common \
-        php8.1-curl \
-        # php8.1-ctype \
-        php8.1-dev \
-        # php8.1-dom \
-        # php8.1-fileinfo \
-        php8.1-fpm \
-        php8.1-gd \
-        # php8.1-iconv \
-        php8.1-intl \
-        php8.1-mbstring \
-        # php8.1-mcrypt \
-        php8.1-opcache \
-        # php8.1-openssl \
-        # php8.1-pdo \
-        php8.1-mysql \
-        php8.1-pgsql \
-        # php8.1-session \
-        # php8.1-simplexml \
-        php8.1-soap \
-        php8.1-sqlite3 \
-        # php8.1-tokenizer \
-        php8.1-xml \
-        # php8.1-xmlreader \
-        # php8.1-xmlwriter \
-        # php8.1-xdebug \
-        php8.1-zip \
-        # php8.1-zlib \
+        php8.2 \
+        php8.2-bcmath \
+        php8.2-cli \
+        php8.2-common \
+        php8.2-curl \
+        # php8.2-ctype \
+        php8.2-dev \
+        # php8.2-dom \
+        # php8.2-fileinfo \
+        php8.2-fpm \
+        php8.2-gd \
+        # php8.2-iconv \
+        php8.2-intl \
+        php8.2-mbstring \
+        # php8.2-mcrypt \
+        php8.2-opcache \
+        # php8.2-openssl \
+        # php8.2-pdo \
+        php8.2-mysql \
+        php8.2-pgsql \
+        # php8.2-session \
+        # php8.2-simplexml \
+        php8.2-soap \
+        php8.2-sqlite3 \
+        # php8.2-tokenizer \
+        php8.2-xml \
+        # php8.2-xmlreader \
+        # php8.2-xmlwriter \
+        # php8.2-xdebug \
+        php8.2-zip \
+        # php8.2-zlib \
         ssh \
         supervisor \
         tzdata \
