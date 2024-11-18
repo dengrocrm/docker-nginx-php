@@ -1,12 +1,12 @@
-FROM ubuntu:23.04
+FROM ubuntu:24.04
 LABEL maintainer="dengrocrm"
 
 # Deleting the ubuntu user as it's not required and is known to conflict with host system user/group IDs
 RUN userdel -f ubuntu && \
   if getent group ubuntu ; then groupdel ubuntu; fi
 
-ENV LOCALE="en_US.UTF-8" \
-    DEBIAN_FRONTEND=noninteractive \
+ENV LOCALE="en_US.UTF-8"
+ENV DEBIAN_FRONTEND=noninteractive \
     LANG=${LOCALE} \
     LANGUAGE=${LOCALE} \
     LC_ALL=${LOCALE} \
@@ -29,37 +29,37 @@ RUN apt-get update -y && \
         nginx \
         nodejs \
         npm \
-        php8.1 \
-        php8.1-bcmath \
-        php8.1-cli \
-        php8.1-common \
-        php8.1-curl \
-        # php8.1-ctype \
-        php8.1-dev \
-        # php8.1-dom \
-        # php8.1-fileinfo \
-        php8.1-fpm \
-        php8.1-gd \
-        # php8.1-iconv \
-        php8.1-intl \
-        php8.1-mbstring \
-        # php8.1-mcrypt \
-        php8.1-opcache \
-        # php8.1-openssl \
-        # php8.1-pdo \
-        php8.1-mysql \
-        php8.1-pgsql \
-        # php8.1-session \
-        # php8.1-simplexml \
-        php8.1-soap \
-        php8.1-sqlite3 \
-        # php8.1-tokenizer \
-        php8.1-xml \
-        # php8.1-xmlreader \
-        # php8.1-xmlwriter \
-        # php8.1-xdebug \
-        php8.1-zip \
-        # php8.1-zlib \
+        php8.3 \
+        php8.3-bcmath \
+        php8.3-cli \
+        php8.3-common \
+        php8.3-curl \
+        # php8.3-ctype \
+        php8.3-dev \
+        # php8.3-dom \
+        # php8.3-fileinfo \
+        php8.3-fpm \
+        php8.3-gd \
+        # php8.3-iconv \
+        php8.3-intl \
+        php8.3-mbstring \
+        # php8.3-mcrypt \
+        php8.3-opcache \
+        # php8.3-openssl \
+        # php8.3-pdo \
+        php8.3-mysql \
+        php8.3-pgsql \
+        # php8.3-session \
+        # php8.3-simplexml \
+        php8.3-soap \
+        php8.3-sqlite3 \
+        # php8.3-tokenizer \
+        php8.3-xml \
+        # php8.3-xmlreader \
+        # php8.3-xmlwriter \
+        # php8.3-xdebug \
+        php8.3-zip \
+        # php8.3-zlib \
         ssh \
         supervisor \
         tzdata \
